@@ -51,7 +51,7 @@ export function TimeLimitBanner({ deadline }: { deadline: string }) {
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-lime">Time left</p>
         <p className="mt-1 text-sm text-lime">
-          {ended ? "Reporting is closed." : "File a report before this hits zero."}
+          {ended ? "Цаг дууссан." : "Цаг дуусахаас өмнө мэдээллээрэй"}
         </p>
       </div>
       <p className="font-display text-4xl tabular-nums tracking-tight">{left === null ? "—" : formatClock(left)}</p>
