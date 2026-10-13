@@ -13,10 +13,10 @@ export default function HomePage() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-canopy">Campus repair desk</p>
           <h1 className="mt-3 max-w-xl font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl">
-            Сургуулийн эргэн тойрон дахь эвдрэлийг мэдээллэх
+            Сургуулийн эргэн тойрон дахь эвдрэлийг мэдээлэх
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-moss">
-            3 оюутантай багаа бүрдүүлж эвдрэлийг зургаар мэдээллэх ба эвдрэлийг зэргээр оноо авж хоорондоо оноогоор уралдана.
+          3 оюутантай багаа бүрдүүлж эвдрэлийг зургаар мэдээлэх ба эвдрэлийг зэргээр оноо авч хоорондоо оноогоор уралдана.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/report" className="rounded-full bg-canopy-deep px-5 py-3 text-sm font-semibold text-paper">
