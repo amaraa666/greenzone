@@ -1,10 +1,10 @@
 import { CONFIRM_POINTS, SEVERITY_POINTS } from "@/lib/points";
 
 const rows = [
-  { label: "Low", points: SEVERITY_POINTS.Low, note: "chosen by the desk" },
-  { label: "Medium", points: SEVERITY_POINTS.Medium, note: "chosen by the desk" },
-  { label: "High", points: SEVERITY_POINTS.High, note: "chosen by the desk" },
-  { label: "Confirm", points: CONFIRM_POINTS, note: "on an open ticket" },
+  { label: "Low", points: SEVERITY_POINTS.Low, note: "Эвдрэлийн зэрэг бага" },
+  { label: "Medium", points: SEVERITY_POINTS.Medium, note: "Эвпрэлийн зэрэг дунд" },
+  { label: "High", points: SEVERITY_POINTS.High, note: "Эвдрэлийн зэрэг их" },
+  { label: "Confirm", points: CONFIRM_POINTS, note: "Давхардсан мэдээлэл" },
 ];
 
 export function PointsLegend() {
