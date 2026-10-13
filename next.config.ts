@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "16mb",
+    },
+  },
+  serverExternalPackages: ["exceljs", "nodemailer"],
   turbopack: {
     rules: {
       "*.css": {
@@ -13,5 +19,8 @@ const nextConfig: NextConfig = {
     },
   },
 };
+
+
+
 
 export default nextConfig;

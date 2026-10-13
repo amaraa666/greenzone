@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --color-ink: #14261c;
+  --color-canopy: #1f7a4d;
+  --color-canopy-deep: #0f3d28;
+  --color-lime: #e4f56a;
+  --color-sand: #f3efe4;
+  --color-paper: #fffcf6;
+  --color-line: #d5dccf;
+  --color-clay: #c4512c;
+  --color-moss: #3e6b50;
+  --color-mist: #e5f3ea;
+  --color-amber: #9a6412;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-sand);
+  background-image:
+    radial-gradient(circle at 8% -8%, rgba(228, 245, 106, 0.55), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(31, 122, 77, 0.14), transparent 26%);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: #e4f56a;
+  color: #14261c;
+}
+
+:focus-visible {
+  outline: 2px solid #0f3d28;
+  outline-offset: 2px;
 }
