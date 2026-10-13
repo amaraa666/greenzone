@@ -27,7 +27,7 @@ export function Leaderboard({
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-lime">Шагнал</p>
         <p className="mt-1 font-display text-2xl tracking-tight">Эрдэм кафенаас үнэгүй хоол идэх эрх</p>
         <p className="mt-1 text-sm leading-6 text-paper/85">
-          Уралдааны эцэст хамгийн их оноотой багийн 3 гишүүдэд энэхүү шагналыг авна.
+          Уралдааны эцэст хамгийн их оноотой багийн 3 гишүүд энэхүү шагналыг авна.
         </p>
       </div>
       {error ? (
