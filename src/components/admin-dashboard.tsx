@@ -140,7 +140,6 @@ export function AdminDashboard({
     return haystack.includes(needle);
   });
   const matched = filter === "All" ? narrowed : narrowed.filter((item) => item.report.status === filter);
-  const visible = matched.slice(0, 5);
   const filtersActive =
     apartment !== "All" || roomFilter !== "All" || category !== "All" || severity !== "All" || team !== "All" || needle.length > 0;
 
@@ -246,7 +245,7 @@ export function AdminDashboard({
           <div>
             <h2 className="font-display text-2xl tracking-tight">Review reports</h2>
             <p className="text-xs text-moss">
-              {matched.length > 5 ? `Latest 5 of ${matched.length}.` : `${visible.length} shown.`}
+              {`${matched.length} shown.`}
               {filter === "Pending"
                 ? " Open a photo, then accept or reject."
                 : " Tap a thumbnail to inspect the photo."}
@@ -331,7 +330,7 @@ export function AdminDashboard({
 
       {notice ? <p className="mt-4 rounded-2xl bg-[#fdf4f0] px-4 py-3 text-sm text-clay">{notice}</p> : null}
 
-      {visible.length === 0 ? (
+      {matched.length === 0 ? (
         <p className="mt-4 rounded-2xl border border-line bg-paper px-4 py-6 text-sm text-moss">
           {filtersActive
             ? "No reports match these filters."
@@ -341,7 +340,7 @@ export function AdminDashboard({
         </p>
       ) : (
         <ul className={`mt-3 grid gap-3 ${filter === "Pending" ? "" : "lg:grid-cols-2"}`}>
-          {visible.map(({ report, apartment: reportApartment, room: reportRoom }) =>
+          {matched.map(({ report, apartment: reportApartment, room: reportRoom }) =>
             report.status === "Pending" ? (
               <li key={report.id} className="overflow-hidden rounded-3xl border border-line bg-paper sm:grid sm:grid-cols-[17rem_1fr] lg:col-span-2">
                 {report.imageUrls.length > 0 ? (

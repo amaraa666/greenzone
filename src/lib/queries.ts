@@ -170,15 +170,13 @@ export async function fetchTicketSummaries(): Promise<{ tickets: TeamTicket[]; e
   return { tickets, error: null };
 }
 
-export async function fetchReports(limit = 200): Promise<{ reports: ReportCard[]; error: string | null }> {
+export async function fetchReports(limit?: number): Promise<{ reports: ReportCard[]; error: string | null }> {
   const supabase = getSupabase();
   if (!supabase) return { reports: [], error: SETUP_MESSAGE };
 
-  const { data, error } = await supabase
-    .from("issue_reports")
-    .select(REPORT_SELECT)
-    .order("created_at", { ascending: false })
-    .limit(limit);
+  let query = supabase.from("issue_reports").select(REPORT_SELECT).order("created_at", { ascending: false });
+  if (limit !== undefined) query = query.limit(limit);
+  const { data, error } = await query;
 
   if (error) return { reports: [], error: explainDbError(error.message) };
   return {
